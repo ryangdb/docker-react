@@ -12,10 +12,10 @@ before_install:
   # executed before our tests are ran
   # setup required before we deploy our project / run our tests
 
-  script:
-    - docker run -e CI=true ryangdb/docker-react npm run test
-    # these commands are used to run the test suite
-    # if any of these commands return a status code which is not 0
-    # then travis is going to assume that something was not successful 
-    # travis is also going to assume that the tests exit automatically
-    # -- --coverage (can be used to close out of the docker test suite)
+script:
+  - docker run -e CI=true ryangdb/docker-react npm run test
+  # these commands are used to run the test suite
+  # if any of these commands return a status code which is not 0
+  # then travis is going to assume that something was not successful 
+  # travis is also going to assume that the tests exit automatically
+  # -- --coverage (can be used to close out of the docker test suite)
