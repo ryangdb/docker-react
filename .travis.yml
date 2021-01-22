@@ -19,3 +19,17 @@ script:
   # then travis is going to assume that something was not successful 
   # travis is also going to assume that the tests exit automatically
   # -- --coverage (can be used to close out of the docker test suite)
+
+deploy:
+  provider: elasticbeanstalk
+  # travis-ci will do much automatically and know that it is interacting with elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-react"
+  env: "DockerReact-env-1"
+  bucket_name: "elasticbeanstalk-us-east-2-591460687809"
+  buccket_path: "docker-react"
+  on:
+    branch: master
+  access_key_id: "$AWS_ACCES_KEY"
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
